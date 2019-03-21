@@ -1,0 +1,262 @@
+body {
+  --computer-color: #E0e0e0;
+  --main-bg: #444444;
+  --computer-parts: #757575;
+  --lights-off: #F5F5F5; 
+  --lights-on: #64B5F6;
+ 
+  background-color: var(--main-bg);
+  display: flex;
+  margin: 10px 30px;
+
+}
+
+.case {
+  width: 280px;
+  height: 600px;
+  background-color: var(--computer-color);
+  box-shadow: inset 0 0 10px #333333;
+  
+}
+
+.glass-case {
+ /* width: 240px;
+  height: 600px; */
+ /* background-color: #42A5F5; */
+   border-top: 10px solid transparent;
+  border-bottom: 100px solid transparent; 
+  border-right:200px solid var(--computer-color);
+  display: flex;
+  position: relative;
+  
+}
+
+
+/* the blue glass is made up of 3 triangles */
+.glass {
+  border-top: 10px solid transparent;
+  border-bottom: 560px solid transparent;
+  border-right:190px solid var(--lights-off);
+  position: absolute;
+  left: 0;
+  z-index: 3;
+  
+}
+
+
+@keyFrames turnOn {
+  0 {
+    border-right: 190px solid var(--lights-off);
+  }
+  
+  100%{
+    border-right: 190px solid var(--lights-on);
+    box-shadow: 0px -120px 77px 11px rgba(100,181,246,.3);
+  }
+}
+
+
+
+
+.flip {  
+ transform: rotate(180deg);
+  border-bottom: 560px solid transparent;
+  z-index: 0;
+ 
+}
+
+
+
+@keyFrames turnOnn {
+  0 {
+    border-right: 190px solid var(--lights-off);
+  }
+  
+  100%{
+    border-right: 190px solid var(--lights-on);
+    
+  }
+}
+
+
+/*
+
+img(src="http://i64.tinypic.com/33c6tqe.png " class="glass-case_left-fan spin")
+img(src="http://i66.tinypic.com/n9e0j.png " class="glass-case_right-fan spin")
+
+
+.glass-case_left-fan {
+ width: 63px;
+ height: 131px;
+ position: absolute;
+ z-index: 5;
+ left: 51px;
+ top: 26px;
+}
+
+.glass-case_right-fan {
+  width: 90px;
+  height: 149px;  
+  position: absolute;
+  left: 120px;
+  top: 27px;
+  z-index: 5;
+  
+  
+}
+
+.spin {
+  transform: rotate(0deg);
+ animation: spinning 4s infinite linear ;
+}
+
+
+@keyframes spinning {
+  
+  0{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }  
+}
+ */
+
+.floor {
+ background-color: var(--computer-color); 
+  height: 50px;
+border-style: solid;
+border-width: 100px 0 0 190px;
+border-color: var(--lights-off) transparent transparent var(--main-bg);
+position: absolute;
+top: 505px;
+left: 0px;
+ margin-left: 30px;
+z-index: 1;
+  
+}
+
+
+@keyframes turnOnnn {
+  0 {
+    border-color: #536DFE transparent transparent var(--main-bg);
+  }
+  
+  100%{
+    border-color: var(--lights-on) transparent transparent var(--main-bg);
+  }
+}
+
+.case_logo{
+  position: absolute;
+  top: 120px;
+  left: 310px;
+  width: 85px;
+  height: 100px;
+}
+
+.column-wrap {
+  margin-left: 210px;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  width: 110px;
+  height: 369px;
+  
+  
+}
+
+.case_power {
+  
+  margin-top: 14px;
+  border-radius: 1px 1px 1px 1px inherit inherit inherit inherit;
+  width: 36px;
+  height: 36px;
+  background-color: var(--computer-parts);
+  
+}
+
+.case_power-lit{
+  width: 30px;
+  height: 30px;
+  background-color: var(--lights-off);
+  margin: 3px auto 0px auto ;
+   opacity: .5
+}
+
+.case_power-lit:hover{
+  background-color: var(--lights-on);
+  cursor: pointer;
+}
+
+.case_power-pic{
+  margin-top: 1px;
+  margin-right: 10px;
+  padding-right: 0px;
+  padding-left: 1px;
+  padding-bottom: 2px;
+  
+}
+
+.case_logo2{
+  border-radius: 5px;
+  width: 50px;
+  height: 133px;
+  background-color: var(--lights-off);
+  margin-top: 10px;
+  margin-left: -7px;
+  opacity: .5;
+}
+
+.case_input{
+  width: 16px;
+  height: 16px;
+  background-color: var(--computer-parts);
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 50px;
+  
+}
+
+.case_input-lit{
+  margin: auto;
+  margin-top: 2px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--lights-off);
+  border-radius: 50px;
+    opacity: .5;
+}
+
+
+
+.case_usb{
+  width: 45px;
+  height: 15px;
+  background-color: var(--computer-parts);
+  margin-left: -5px;
+  margin-top: 10px;
+}
+
+
+
+.case_usb-lit{
+  margin-top: auto;
+  height: 10px;
+  background-color: var(--lights-off);
+  opacity: .5;
+}
+
+.notice {
+  border: 5px solid grey; 
+  width:120px;
+  height: 50px;
+  text-align: center;
+  background-color: var(--lights-off);
+  position: relative;
+  left: 50px;
+  top: 50px;
+  opacity: .5 ;
+  font-color: var(--computer-parts);
+  font-weight: bold;
+}
